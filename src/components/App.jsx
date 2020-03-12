@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import NavBar from './NavBar/NavBar';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Footer from './Footer/Footer';
 
 import HomePage from '../pages/Home/Home';
 
@@ -21,6 +22,7 @@ const App = () => {
           </Switch>
         </ErrorBoundary>
       </AppContainer>
+      <Footer />
     </>
   );
 };
