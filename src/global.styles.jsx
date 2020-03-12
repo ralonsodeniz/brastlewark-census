@@ -32,7 +32,7 @@ p,
 a {
   font-family: 'Montserrat', sans-serif;
   font-size: ${variables.defaultFontSize};
-  text-align:justify;
+  text-align: justify;
 }
 
 a,
@@ -45,5 +45,10 @@ a:active {
 
 a:hover {
   transition: all 0.3s ease-in-out;
+}
+
+#modal{
+  position: relative;
+  z-index: 999;
 }
 `;
