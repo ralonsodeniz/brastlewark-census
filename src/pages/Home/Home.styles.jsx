@@ -84,15 +84,6 @@ export const HeaderLink = styled(Link)`
   );
   border-image-slice: 1;
 
-  ${mediaQueryHelper(
-    'phone',
-    css`
-      background-image: none;
-      border: 2px solid ${variables.secondaryColor};
-      -webkit-text-fill-color: ${variables.secondaryColor};
-    `
-  )};
-
   &::after {
     content: '';
     display: block;

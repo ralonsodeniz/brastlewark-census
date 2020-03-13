@@ -13,15 +13,9 @@ const dataContainerStyles = css`
     css`
       align-items: center;
       margin-bottom: 0.5rem;
-    `
-  )}
-
-  ${mediaQueryHelper(
-    'phone-xs',
-    css`
       font-size: ${variables.smallFontSize};
     `
-  )};
+  )}
 `;
 
 export const UserDataContainer = styled.div`
@@ -107,6 +101,13 @@ export const UserDataTitle = styled.span`
   margin-bottom: 1rem;
   font-weight: bold;
   ${variables.gradientTextStyle}
+
+  ${mediaQueryHelper(
+    'phone',
+    css`
+      font-size: ${variables.defaultFontSize};
+    `
+  )}
 `;
 
 export const UserDataText = styled.span`
