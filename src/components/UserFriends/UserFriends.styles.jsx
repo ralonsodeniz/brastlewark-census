@@ -96,7 +96,6 @@ export const UserFriendsTextContainer = styled.p`
 `;
 
 export const UserFriendText = styled.span`
-  cursor: pointer;
   white-space: pre;
   margin-bottom: 0.5rem;
 `;
