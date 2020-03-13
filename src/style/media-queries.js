@@ -1,23 +1,15 @@
 import { css } from 'styled-components';
-// MEDIA QUERY MANAGER
+
 /*
-
-0 - 600px:          Phone
-600px - 900px       Table Portrait
-900px - 1200px      Table Landscape
-[1200px - 1800px]   Desktop Normal Styles
-1800px +            Big Desktop
-
 1em = 16px
-
 */
 
 export default (breakpoint, breakpointStyle) => {
   switch (breakpoint) {
     case 'phone-xs':
       return css`
-        @media screen and (max-width: 22.5em) {
-          /*0 - 360px*/
+        @media screen and (max-width: 23.45em) {
+          /*0 - 375px*/
           ${breakpointStyle}
         }
       `;
@@ -37,8 +29,8 @@ export default (breakpoint, breakpointStyle) => {
       `;
     case 'tab-xl':
       return css`
-        @media screen and (max-width: 63em) {
-          /*1000px*/
+        @media screen and (max-width: 68.75em) {
+          /*1100px*/
           ${breakpointStyle}
         }
       `;
