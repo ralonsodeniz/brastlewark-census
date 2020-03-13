@@ -26,11 +26,11 @@ const SearchBoxCombo = () => {
   const debouncedProfesion = useDebounce(profession, 1500);
 
   useEffect(() => {
-    if (debouncedGnomeName !== '') dispatch(setGnomeNameSearchField(debouncedGnomeName));
+    dispatch(setGnomeNameSearchField(debouncedGnomeName));
   }, [debouncedGnomeName, dispatch]);
 
   useEffect(() => {
-    if (debouncedProfesion !== '') dispatch(setProfessionSearchField(debouncedProfesion));
+    dispatch(setProfessionSearchField(debouncedProfesion));
   }, [debouncedProfesion, dispatch]);
 
   const onHandleSearch = useCallback(event => {
