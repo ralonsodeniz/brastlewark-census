@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+// import { LazyImage } from 'react-lazy-images';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import mediaQueryHelper from '../../style/media-queries';
 import * as variables from '../../style/variables';
@@ -33,16 +35,40 @@ export const CardContainer = styled.div`
   )}
 `;
 
-export const CardImage = styled.img`
+export const CardImage = styled(LazyLoadImage)`
   object-fit: cover;
   object-position: 50% 50%;
   height: 250px;
+  width: 250px;
+  border-radius: 5px;
+  ${mediaQueryHelper(
+    'tab-port',
+    css`
+      height: 200px;
+      width: 200px;
+    `
+  )};
+  ${mediaQueryHelper(
+    'phone',
+    css`
+      height: 125px;
+      width: 125px;
+    `
+  )};
+`;
+
+export const CardImagePlaceholder = styled.img`
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: 250px;
+  width: 250px;
   border-radius: 5px;
 
   ${mediaQueryHelper(
     'tab-port',
     css`
       height: 200px;
+      width: 200px;
     `
   )};
 
@@ -50,6 +76,7 @@ export const CardImage = styled.img`
     'phone',
     css`
       height: 125px;
+      width: 125px;
     `
   )};
 `;

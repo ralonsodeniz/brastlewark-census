@@ -95,7 +95,6 @@ export const UserProfessionsTextContainer = styled.p`
 `;
 
 export const UserProfessionText = styled.span`
-  cursor: pointer;
   white-space: pre;
   margin-bottom: 0.5rem;
 `;

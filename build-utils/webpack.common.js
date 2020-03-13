@@ -79,4 +79,9 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };

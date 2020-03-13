@@ -6,10 +6,11 @@ export default async url => {
     const { data } = await axios.get(url);
 
     const processedData = data.Brastlewark.map(item => {
-      const { hair_color, ...noHairColor } = item;
+      const { hair_color, professions, ...noHairColor } = item;
       return {
         ...noHairColor,
         hairColor: hair_color,
+        professions: professions.map(profession => profession.trim()),
       };
     });
 

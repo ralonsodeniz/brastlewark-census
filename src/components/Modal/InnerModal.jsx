@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { lazy, Suspense, useCallback } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';

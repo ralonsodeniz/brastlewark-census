@@ -15,11 +15,11 @@ const UserFriends = ({ friends }) => {
       <UserFriendsTitle>Friends</UserFriendsTitle>
       <Friendsvg />
       <UserFriendsTextContainer>
-        {friends.map((profession, professionIndex) => {
-          if (friends.length - 1 !== professionIndex) {
-            return <UserFriendText key={professionIndex}>{profession}, </UserFriendText>;
+        {friends.map((friend, friendIndex) => {
+          if (friends.length - 1 !== friendIndex) {
+            return <UserFriendText key={friendIndex}>{friend}, </UserFriendText>;
           }
-          return <UserFriendText key={professionIndex}>{profession}</UserFriendText>;
+          return <UserFriendText key={friendIndex}>{friend}</UserFriendText>;
         })}
       </UserFriendsTextContainer>
     </UserFriendsContainer>

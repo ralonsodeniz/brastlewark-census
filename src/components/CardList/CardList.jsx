@@ -25,7 +25,7 @@ const CardList = ({ items, loading }) => {
     [dispatch]
   );
 
-  const CardsMarkUp = items.length
+  const CardsMarkUp = !loading
     ? items.map(item => {
         const { name, thumbnail, id } = item;
         return (
