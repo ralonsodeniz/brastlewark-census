@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 
 import { FooterContainer, FooterText, FooterLink } from './Footer.styles';

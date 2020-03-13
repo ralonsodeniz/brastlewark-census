@@ -60,7 +60,7 @@ export default styled.div`
     'phone',
     css`
       margin-top: 20px;
-      height: 50vh;
+      max-height: 50vh;
     `
   )};
 
@@ -68,7 +68,7 @@ export default styled.div`
     'phone-xs',
     css`
       margin-top: 20px;
-      height: 43vh;
+      max-height: 43vh;
       grid-gap: 13px;
     `
   )};
