@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|webp)$/i,
         use: ['file-loader'],
       },
       {
@@ -44,7 +44,7 @@ module.exports = {
           {
             loader: 'react-svg-loader',
             options: {
-              jsx: true, // true outputs JSX tags
+              jsx: true,
             },
           },
         ],
@@ -52,7 +52,19 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.svg', '.jpeg', '.png'],
+    extensions: [
+      '*',
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.css',
+      '.scss',
+      '.svg',
+      '.jpeg',
+      '.png',
+      '.webp',
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
