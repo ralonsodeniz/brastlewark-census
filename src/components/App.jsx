@@ -1,9 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import { useSelector, shallowEqual } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectShowModal } from '../redux/selectors/modalSelectors';
+import { fetchApiStart } from '../redux/actions/dataActions';
 
 import NavBar from './NavBar/NavBar';
 import InnerModal from './Modal/InnerModal';
@@ -24,6 +25,12 @@ const selectAppData = createStructuredSelector({
 });
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchApiStart(process.env.API_URL));
+  }, []);
+
   const appData = useSelector(selectAppData, shallowEqual);
   const { showModal } = appData;
 
