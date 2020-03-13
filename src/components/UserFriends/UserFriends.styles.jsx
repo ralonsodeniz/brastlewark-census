@@ -16,15 +16,9 @@ const friendsContainerStyles = css`
       justify-content: center;
       align-items: center;
       margin-bottom: 0.5rem;
-    `
-  )}
-
-  ${mediaQueryHelper(
-    'phone-xs',
-    css`
       font-size: ${variables.smallFontSize};
     `
-  )};
+  )}
 `;
 
 export const UserFriendsContainer = styled.div`
