@@ -6,7 +6,7 @@ import {
   CardDetailsContainer,
   CardImage,
   CardDetailsMock,
-  CadrDetailsTitle,
+  CardDetailsTitle,
 } from './Card.styles';
 
 const Card = ({ name, imageUrl, onClick }) => {
@@ -15,7 +15,7 @@ const Card = ({ name, imageUrl, onClick }) => {
       <CardImage alt="user" src={imageUrl} />
       <CardDetailsMock>
         <CardDetailsContainer>
-          <CadrDetailsTitle>{name}</CadrDetailsTitle>
+          <CardDetailsTitle>{name}</CardDetailsTitle>
         </CardDetailsContainer>
       </CardDetailsMock>
     </CardContainer>

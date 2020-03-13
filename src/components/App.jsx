@@ -39,12 +39,12 @@ const App = () => {
               <Route exact path="/citizens" component={Citizens} />
             </Suspense>
           </Switch>
+          {showModal && (
+            <Modal>
+              <InnerModal />
+            </Modal>
+          )}
         </ErrorBoundary>
-        {showModal && (
-          <Modal>
-            <InnerModal />
-          </Modal>
-        )}
       </AppContainer>
       <Footer />
     </>

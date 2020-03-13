@@ -49,7 +49,7 @@ const Citizens = () => {
         </ProffesionSearchContainer>
       </SearchBoxesContainer>
       <CitizensListContainer>
-        <CardList items={[{}]} />
+        <CardList items={[]} />
       </CitizensListContainer>
     </CitizensContainer>
   );

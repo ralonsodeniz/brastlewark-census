@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import mediaQueryHelper from '../../style/media-queries';
 import * as variables from '../../style/variables';
 
-export const CardContainer = styled.div`
+export const CardSkeletonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -33,7 +33,7 @@ export const CardContainer = styled.div`
   )}
 `;
 
-export const CardImage = styled.img`
+export const CardSkeletonImage = styled.img`
   object-fit: cover;
   object-position: 50% 50%;
   height: 250px;
@@ -54,7 +54,7 @@ export const CardImage = styled.img`
   )};
 `;
 
-export const CardDetailsMock = styled.div`
+export const CardSkeletonDetailsMock = styled.div`
   height: 40px;
   position: relative;
   display: flex;
@@ -75,7 +75,7 @@ export const CardDetailsMock = styled.div`
   )};
 `;
 
-export const CardDetailsContainer = styled.div`
+export const CardSkeletonDetailsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,24 +111,44 @@ export const CardDetailsContainer = styled.div`
   )};
 `;
 
-export const CardDetailsTitle = styled.h3`
-  padding-top: 20px;
-  font-weight: bold;
-  font-size: ${variables.midFontSize};
+export const CardSkeletonDetailsTitle = styled.div`
+  width: 180px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  height: ${variables.midFontSize};
+  background: linear-gradient(to right, ${variables.darkGrey}, ${variables.whiteColor});
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
 
   ${mediaQueryHelper(
     'tab-port',
     css`
-      padding-top: 15px;
-      font-size: ${variables.defaultFontSize};
+      margin-top: 0.75rem;
+      width: 150px;
+      height: ${variables.defaultFontSize};
     `
   )};
 
   ${mediaQueryHelper(
     'phone',
     css`
-      padding-top: 10px;
-      font-size: ${variables.smallFontSize};
+      margin-top: 0.4rem;
+      width: 90px;
+      height: ${variables.smallFontSize};
     `
   )};
+
+  @keyframes gradient {
+    0% {
+      background-position: 100% 50%;
+    }
+
+    50% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 100% 50%;
+    }
+  }
 `;
