@@ -28,7 +28,9 @@
   "rules": {
     "prettier/prettier": ["error"],
     "import/no-extraneous-dependencies": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-array-index-key": 0
   },
   "settings": {
     "react": {
