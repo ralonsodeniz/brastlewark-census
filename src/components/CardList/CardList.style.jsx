@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
+import * as variables from '../../style/variables';
 import mediaQueryHelper from '../../style/media-queries';
 
-export default styled.div`
+export const CardListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
-  /* grid-template-rows: repeat(auto-fill, 250px); */
   padding: 1rem 0;
   justify-content: center;
   grid-gap: 20px;
@@ -18,6 +18,7 @@ export default styled.div`
   overflow-y: auto;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  position: relative;
 
   ${mediaQueryHelper(
     'tab-port',
@@ -72,4 +73,17 @@ export default styled.div`
       grid-gap: 13px;
     `
   )};
+`;
+
+export const CardListSpinnerContainer = styled.div`
+  background-color: ${`${variables.darkGrey}B3`};
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 `;

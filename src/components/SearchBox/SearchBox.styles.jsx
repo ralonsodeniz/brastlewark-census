@@ -59,9 +59,7 @@ export const SearchBoxLabel = styled.label`
   top: 17.5px;
   transition: 300ms ease all;
   z-index: 9;
-  /* color: ${variables.darkBlue}; */
   ${variables.gradientTextStyle}
-  ${({ shrink }) => (shrink ? shrinkLabelStyles : '')};
 
   ${mediaQueryHelper(
     'phone',
@@ -69,4 +67,6 @@ export const SearchBoxLabel = styled.label`
       top: 15px;
     `
   )};
+
+  ${({ shrink }) => (shrink ? shrinkLabelStyles : '')};
 `;

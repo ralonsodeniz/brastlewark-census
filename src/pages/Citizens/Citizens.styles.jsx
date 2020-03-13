@@ -53,26 +53,10 @@ export const CitizensTitle = styled.h2`
 
 export const SearchBoxesContainer = styled.div`
   grid-area: searchboxes;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  grid-template: auto / auto;
-  grid-template-areas: 'name profession';
-  background: ${variables.gradient};
-  border-radius: 5px;
-  padding: 0.75rem;
-
-  ${mediaQueryHelper(
-    'phone',
-    css`
-      grid-template: auto / auto;
-      justify-items: center;
-      grid-template-areas:
-        'name'
-        'profession';
-      padding: 0.5rem;
-    `
-  )};
+  height: min-content;
+  width: min-content;
+  margin: 0;
+  padding: 0;
 `;
 
 export const CitizensListContainer = styled.div`
@@ -81,12 +65,4 @@ export const CitizensListContainer = styled.div`
   width: 100%;
   margin: 0;
   padding: 0;
-`;
-
-export const NameSearchContainer = styled.div`
-  grid-area: name;
-`;
-
-export const ProffesionSearchContainer = styled.div`
-  grid-area: profession;
 `;

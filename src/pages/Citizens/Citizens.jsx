@@ -1,55 +1,35 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import SearchBox from '../../components/SearchBox/SearchBox';
+import { selectLoadingData, selectGnomesData } from '../../redux/selectors/dataSelectors';
+
 import CardList from '../../components/CardList/CardList';
+import SearchBoxCombo from '../../components/SearchBoxCombo/SearchBoxCombo';
 
 import {
   CitizensContainer,
   CitizensTitle,
   SearchBoxesContainer,
-  NameSearchContainer,
-  ProffesionSearchContainer,
   CitizensListContainer,
 } from './Citizens.styles';
 
+const selectCitizensData = createStructuredSelector({
+  loadingData: selectLoadingData,
+  gnomesData: selectGnomesData,
+});
+
 const Citizens = () => {
-  const [state, setState] = useState({
-    gnomeName: '',
-    profession: '',
-  });
-
-  const { gnomeName, profession } = state;
-
-  const onHandleSearch = useCallback(event => {
-    const { name, value } = event.target;
-    setState(prevState => ({ ...prevState, [name]: value }));
-  }, []);
+  const { loadingData, gnomesData } = useSelector(selectCitizensData, shallowEqual);
 
   return (
     <CitizensContainer>
       <CitizensTitle>Find your gnome</CitizensTitle>
       <SearchBoxesContainer>
-        <NameSearchContainer>
-          <SearchBox
-            id="name"
-            name="name"
-            label="gnome name"
-            value={gnomeName}
-            onSearchChange={onHandleSearch}
-          />
-        </NameSearchContainer>
-        <ProffesionSearchContainer>
-          <SearchBox
-            id="profession"
-            name="profession"
-            label="gnome profession"
-            value={profession}
-            onSearchChange={onHandleSearch}
-          />
-        </ProffesionSearchContainer>
+        <SearchBoxCombo />
       </SearchBoxesContainer>
       <CitizensListContainer>
-        <CardList items={[]} />
+        <CardList items={gnomesData} loading={loadingData} />
       </CitizensListContainer>
     </CitizensContainer>
   );
