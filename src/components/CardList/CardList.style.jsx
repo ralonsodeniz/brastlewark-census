@@ -58,6 +58,14 @@ export const CardListContainer = styled.div`
   }
 
   ${mediaQueryHelper(
+    'small-desktop',
+    css`
+      margin-top: 20px;
+      max-height: 50vh;
+    `
+  )};
+
+  ${mediaQueryHelper(
     'phone',
     css`
       margin-top: 20px;
