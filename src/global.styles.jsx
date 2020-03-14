@@ -7,6 +7,11 @@ html {
     scroll-behavior: smooth;
     height: 100%;
     width: 100%;
+    background-color: ${variables.darkBlue};
+
+    &:fullscreen {
+      background-color: ${variables.darkBlue};
+    }
 }
     
 body {
@@ -17,6 +22,10 @@ body {
     color: ${variables.whiteColor};
     margin: 0;
     padding: 0;
+
+    &:fullscreen {
+      background-color: ${variables.darkBlue};
+    }
 }
 
 code {
@@ -52,6 +61,10 @@ a:hover {
   width: 100vw;
   display:flex;
   flex-direction:column;
+
+  ${'' /* &:fullscreen {
+      background-color: ${variables.darkBlue};
+    } */}
 }
 
 #modal{

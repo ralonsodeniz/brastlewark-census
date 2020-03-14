@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -5,6 +6,8 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectShowModal } from '../redux/selectors/modalSelectors';
 import { fetchApiStart } from '../redux/actions/dataActions';
+import { openModal } from '../redux/actions/modalActions';
+import isMobile from '../helpers/isMobile';
 
 import NavBar from './NavBar/NavBar';
 import InnerModal from './Modal/InnerModal';
@@ -29,6 +32,22 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchApiStart(process.env.API_URL));
+  }, [dispatch, process.env.API_URL]);
+
+  const checkIfFullScreen = () => {
+    if (isMobile() && !document.fullscreenElement)
+      dispatch(
+        openModal({
+          modalType: 'MOBILE_FULLSCREEN_LOCK',
+        })
+      );
+  };
+
+  useEffect(() => {
+    document.addEventListener('fullscreenchange', checkIfFullScreen);
+    return () => {
+      document.removeEventListener('fullscreenchange', checkIfFullScreen);
+    };
   }, []);
 
   const appData = useSelector(selectAppData, shallowEqual);
