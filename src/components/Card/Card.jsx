@@ -9,18 +9,17 @@ import {
   CardImage,
   CardDetailsMock,
   CardDetailsTitle,
-  CardImagePlaceholder,
 } from './Card.styles';
 
 const Card = ({ name, imageUrl, onClick }) => {
   return (
     <CardContainer onClick={onClick}>
       <CardImage
+        wrapperClassName="placeholder"
         alt="user"
-        height={250}
         src={imageUrl}
-        effect="blur"
-        placeholder={<CardImagePlaceholder alt="placeholder" src={NoImg} />}
+        placeholderSrc={NoImg}
+        height="250px"
       />
       <CardDetailsMock>
         <CardDetailsContainer>
