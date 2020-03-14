@@ -33,6 +33,10 @@ export const CardContainer = styled.div`
       height: 125px;
     `
   )}
+
+  & .placeholder {
+    border-radius: 5px;
+  }
 `;
 
 export const CardImage = styled(LazyLoadImage)`
@@ -48,30 +52,6 @@ export const CardImage = styled(LazyLoadImage)`
       width: 200px;
     `
   )};
-  ${mediaQueryHelper(
-    'phone',
-    css`
-      height: 125px;
-      width: 125px;
-    `
-  )};
-`;
-
-export const CardImagePlaceholder = styled.img`
-  object-fit: cover;
-  object-position: 50% 50%;
-  height: 250px;
-  width: 250px;
-  border-radius: 5px;
-
-  ${mediaQueryHelper(
-    'tab-port',
-    css`
-      height: 200px;
-      width: 200px;
-    `
-  )};
-
   ${mediaQueryHelper(
     'phone',
     css`
