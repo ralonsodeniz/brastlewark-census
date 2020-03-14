@@ -11,7 +11,7 @@ import {
   CardDetailsTitle,
 } from './Card.styles';
 
-const Card = ({ name, imageUrl, onClick }) => {
+const Card = ({ name, imageUrl, onClick, height }) => {
   return (
     <CardContainer onClick={onClick}>
       <CardImage
@@ -19,7 +19,7 @@ const Card = ({ name, imageUrl, onClick }) => {
         alt="user"
         src={imageUrl}
         placeholderSrc={NoImg}
-        height="250px"
+        height={height}
       />
       <CardDetailsMock>
         <CardDetailsContainer>
@@ -38,6 +38,7 @@ Card.propTypes = {
   name: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  height: PropTypes.number.isRequired,
 };
 
 export default Card;
