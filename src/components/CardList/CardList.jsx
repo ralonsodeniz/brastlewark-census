@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -13,6 +13,18 @@ import { CardListContainer, CardListSpinnerContainer } from './CardList.style';
 const CardList = ({ items, loading }) => {
   const dispatch = useDispatch();
 
+  const [height, setHeight] = useState(null);
+
+  useEffect(() => {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (vw <= 600) {
+      setHeight(125);
+    } else if (vw <= 900) {
+      setHeight(200);
+    } else setHeight(250);
+  }, [setHeight]);
+
   const handleCardClick = useCallback(
     item => {
       dispatch(
@@ -25,14 +37,21 @@ const CardList = ({ items, loading }) => {
     [dispatch]
   );
 
-  const CardsMarkUp = !loading
-    ? items.map(item => {
-        const { name, thumbnail, id } = item;
-        return (
-          <Card key={id} imageUrl={thumbnail} name={name} onClick={() => handleCardClick(item)} />
-        );
-      })
-    : Array.from({ length: 4 }).map((card, cardIndex) => <CardSkeleton key={cardIndex} />);
+  const CardsMarkUp =
+    !loading || height === null
+      ? items.map(item => {
+          const { name, thumbnail, id } = item;
+          return (
+            <Card
+              key={id}
+              imageUrl={thumbnail}
+              name={name}
+              onClick={() => handleCardClick(item)}
+              height={height}
+            />
+          );
+        })
+      : Array.from({ length: 4 }).map((card, cardIndex) => <CardSkeleton key={cardIndex} />);
 
   return (
     <CardListContainer>
