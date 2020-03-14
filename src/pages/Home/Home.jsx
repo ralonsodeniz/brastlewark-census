@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { openModal } from '../../redux/actions/modalActions';
+import isMobile from '../../helpers/isMobile';
 
 import {
   BannerSvg,
@@ -9,6 +13,17 @@ import {
 } from './Home.styles';
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isMobile() && !document.fullscreenElement)
+      dispatch(
+        openModal({
+          modalType: 'MOBILE_FULLSCREEN_LOCK',
+        })
+      );
+  }, [dispatch, isMobile, document.fullscreenElement]);
+
   return (
     <HeaderContainer>
       <HeaderTitle>Wellcome to Brastlewark</HeaderTitle>

@@ -11,9 +11,11 @@ import Spinner from '../Spinner/Spinner';
 import InnerModalContainer from './InnerModal.styles';
 
 const lazyUserDetail = lazy(() => import('../UserDetail/UserDetail'));
+const lazyMobileFullScreenAndLock = lazy(() => import('../Helpers/MobileFullScreenAndLock'));
 
 const MODAL_OPTIONS = {
   USER_DETAIL: lazyUserDetail,
+  MOBILE_FULLSCREEN_LOCK: lazyMobileFullScreenAndLock,
 };
 
 const getModalData = createStructuredSelector({
@@ -23,15 +25,18 @@ const getModalData = createStructuredSelector({
 
 const InnerModal = () => {
   const dispatch = useDispatch();
-  const modalData = useSelector(getModalData, shallowEqual);
+  const { modalType, modalProps } = useSelector(getModalData, shallowEqual);
   const closeModalOnClickOutside = useCallback(() => dispatch(closeModal()), [dispatch]);
-  const SpecificModal = MODAL_OPTIONS[modalData.modalType];
+  const SpecificModal = MODAL_OPTIONS[modalType];
 
   return (
     <InnerModalContainer>
-      <OnClickOutSide enabled action={closeModalOnClickOutside}>
+      <OnClickOutSide
+        enabled={modalType !== 'MOBILE_FULLSCREEN_LOCK'}
+        action={closeModalOnClickOutside}
+      >
         <Suspense fallback={<Spinner />}>
-          <SpecificModal {...modalData.modalProps} />
+          <SpecificModal {...modalProps} />
         </Suspense>
       </OnClickOutSide>
     </InnerModalContainer>

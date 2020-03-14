@@ -12,6 +12,7 @@ export const CardListContainer = styled.div`
   width: 100%;
   height: min-content;
   max-height: 61vh;
+  min-height: 23vh;
   background: transparent;
   margin-top: 30px;
   overflow-x: hidden;
@@ -36,7 +37,6 @@ export const CardListContainer = styled.div`
     `
   )};
 
-  /* overflow */
   ::-webkit-scrollbar {
     height: 12px;
     display: inline-block;

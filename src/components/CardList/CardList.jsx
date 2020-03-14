@@ -38,7 +38,7 @@ const CardList = ({ items, loading }) => {
   );
 
   const CardsMarkUp =
-    !loading || height === null
+    !loading && height !== null
       ? items.map(item => {
           const { name, thumbnail, id } = item;
           return (
