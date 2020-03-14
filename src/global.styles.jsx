@@ -61,10 +61,6 @@ a:hover {
   width: 100vw;
   display:flex;
   flex-direction:column;
-
-  ${'' /* &:fullscreen {
-      background-color: ${variables.darkBlue};
-    } */}
 }
 
 #modal{

@@ -44,6 +44,7 @@ const App = () => {
   };
 
   useEffect(() => {
+    checkIfFullScreen();
     document.addEventListener('fullscreenchange', checkIfFullScreen);
     return () => {
       document.removeEventListener('fullscreenchange', checkIfFullScreen);
