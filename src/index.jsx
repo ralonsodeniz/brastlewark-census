@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 
 import store from './redux/store';
 
+import serviceWorker from './serviceWorker';
+
 import App from './components/App';
 import AppHelmet from './components/Helmet';
 
@@ -17,3 +19,5 @@ ReactDom.render(
   </Provider>,
   document.getElementById('root')
 );
+
+serviceWorker();

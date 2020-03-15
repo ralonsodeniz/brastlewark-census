@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -73,6 +74,10 @@ module.exports = {
       template: './public/index.html',
     }),
     new FaviconsWebpackPlugin('./public/favicon.png'),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
   ],
   output: {
     path: path.resolve(__dirname, '../', 'build'),
