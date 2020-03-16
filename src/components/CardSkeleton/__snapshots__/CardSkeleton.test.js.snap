@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardSkeleton Component tests expect Card to match shallow snapshot 1`] = `
+<styled.div>
+  <styled.img
+    alt="user"
+    src="test-file-stub"
+  />
+  <styled.div>
+    <styled.div>
+      <styled.div />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

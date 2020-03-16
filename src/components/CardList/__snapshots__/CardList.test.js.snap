@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList Component tests expect CardList to match shallow snapshot 1`] = `
+<styled.div>
+  <CardSkeleton
+    key="0"
+  />
+  <CardSkeleton
+    key="1"
+  />
+  <CardSkeleton
+    key="2"
+  />
+  <CardSkeleton
+    key="3"
+  />
+</styled.div>
+`;
