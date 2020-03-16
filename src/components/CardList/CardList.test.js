@@ -85,8 +85,8 @@ describe('CardList Component tests', () => {
       global.innerWidth = 500;
       global.dispatchEvent(new Event('resize'));
 
-      mockUseEffect(); // 2 times
-      mockUseEffect(); //
+      mockUseEffect();
+      mockUseEffect();
 
       const mockProps = {
         items: [
@@ -109,8 +109,8 @@ describe('CardList Component tests', () => {
       global.innerWidth = 1200;
       global.dispatchEvent(new Event('resize'));
 
-      mockUseEffect(); // 2 times
-      mockUseEffect(); //
+      mockUseEffect();
+      mockUseEffect();
 
       const mockProps = {
         items: [
@@ -133,8 +133,8 @@ describe('CardList Component tests', () => {
       global.innerWidth = 800;
       global.dispatchEvent(new Event('resize'));
 
-      mockUseEffect(); // 2 times
-      mockUseEffect(); //
+      mockUseEffect();
+      mockUseEffect();
 
       const mockProps = {
         items: [
@@ -157,8 +157,8 @@ describe('CardList Component tests', () => {
       global.innerWidth = 500;
       global.dispatchEvent(new Event('resize'));
 
-      mockUseEffect(); // 2 times
-      mockUseEffect(); //
+      mockUseEffect();
+      mockUseEffect();
 
       const mockProps = {
         items: [
