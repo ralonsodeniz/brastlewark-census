@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export default () => {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

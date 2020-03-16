@@ -1,15 +1,9 @@
-import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import styled, { css } from 'styled-components';
-
-import { closeModal } from '../../redux/actions/modalActions';
-
-import setFullScreenAndLock from '../../helpers/setFullScreenAndLock';
 
 import * as variables from '../../style/variables';
 import mediaQueryHelper from '../../style/media-queries';
 
-const MobileFullScreenAndLockContainer = styled.div`
+export const MobileFullScreenAndLockContainer = styled.div`
   margin: 0 auto 0 auto;
   width: max-content;
   background-color: ${variables.darkGrey};
@@ -113,23 +107,3 @@ export const AcceptButton = styled.a`
     }
   }
 `;
-
-const MobileFullScreenAndLock = () => {
-  const dispatch = useDispatch();
-
-  const handleRedirectToCitizens = useCallback(async () => {
-    await setFullScreenAndLock();
-    dispatch(closeModal());
-  }, [setFullScreenAndLock, dispatch]);
-
-  return (
-    <MobileFullScreenAndLockContainer>
-      <p>This app is optimized and developed to be used in fullscreen portrait</p>
-      <AcceptButton type="button" onClick={handleRedirectToCitizens}>
-        Lets go!
-      </AcceptButton>
-    </MobileFullScreenAndLockContainer>
-  );
-};
-
-export default MobileFullScreenAndLock;

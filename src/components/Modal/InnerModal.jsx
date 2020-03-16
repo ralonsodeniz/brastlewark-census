@@ -5,13 +5,15 @@ import { createStructuredSelector } from 'reselect';
 import { closeModal } from '../../redux/actions/modalActions';
 import { selectModalType, selectModalProps } from '../../redux/selectors/modalSelectors';
 
-import OnClickOutSide from '../Helpers/OnClickOutside';
+import OnClickOutSide from '../OnClickOutside/OnClickOutside';
 import Spinner from '../Spinner/Spinner';
 
 import InnerModalContainer from './InnerModal.styles';
 
 const lazyUserDetail = lazy(() => import('../UserDetail/UserDetail'));
-const lazyMobileFullScreenAndLock = lazy(() => import('../Helpers/MobileFullScreenAndLock'));
+const lazyMobileFullScreenAndLock = lazy(() =>
+  import('../MobileFullScreenAndLock/MobileFullScreenAndLock')
+);
 
 const MODAL_OPTIONS = {
   USER_DETAIL: lazyUserDetail,

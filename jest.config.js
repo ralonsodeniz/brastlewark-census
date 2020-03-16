@@ -9,4 +9,5 @@ module.exports = {
     '\\.(css|less)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>src/setupTests.js'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
 };

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component tests expect Card to match shallow snapshot 1`] = `
+<styled.div
+  onClick={[MockFunction]}
+>
+  <Styled(t)
+    alt="user"
+    height={0}
+    placeholderSrc="test-file-stub"
+    src=""
+    wrapperClassName="placeholder"
+  />
+  <styled.div>
+    <styled.div>
+      <styled.h3 />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Card Component tests expect CardContainer to match render snapshot to check styles 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  background-color: transparent;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 250px;
+  height: 250px;
+  box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.c0 .placeholder {
+  border-radius: 5px;
+}
+
+@media screen and (max-width:56.25em) {
+  .c0 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width:37.5em) {
+  .c0 {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+<div
+  class="c0"
+/>
+`;

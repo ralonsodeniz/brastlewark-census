@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -15,7 +15,7 @@ const CardList = ({ items, loading }) => {
 
   const [height, setHeight] = useState(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
     if (vw <= 600) {
