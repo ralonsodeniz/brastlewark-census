@@ -83,10 +83,9 @@ useEffect has being mocked to mimic its behavior using:
 
 ```
 
-and then calling it twice in each test we wanted to mimic its functionality, the first one to execute it and the second to stop it and no trigger an infinite loop
+and then calling it for each time we want to trigger it. mockImplementationOnce() is used to avoid infinite loops.
 
 ```
-    mockUseEffect();
     mockUseEffect();
 
 ```
