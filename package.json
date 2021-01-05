@@ -55,7 +55,7 @@
     "workbox-webpack-plugin": "^5.0.0"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "polished": "^3.4.4",
